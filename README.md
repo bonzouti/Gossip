@@ -15,8 +15,8 @@ Ruby 2.5.1 ;)
 
 # Auteurs
 
-- Bérénice
-- Aleksandra
+- Mohamed
+- Mathieu
 
 
 
