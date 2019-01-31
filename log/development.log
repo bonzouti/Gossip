@@ -1,0 +1,1304 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190131171848)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "description" text, "email" varchar, "age" integer, "city_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131171848_create_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_users_on_city_id" ON "users" ("city_id")[0m
+  ↳ db/migrate/20190131171848_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131171848"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateGossips (20190131171959)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "gossips" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131171959_create_gossips.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_gossips_on_user_id" ON "gossips" ("user_id")[0m
+  ↳ db/migrate/20190131171959_create_gossips.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131171959"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateCities (20190131172030)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "cities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "zip_code" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131172030_create_cities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131172030"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTags (20190131172049)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131172049_create_tags.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131172049"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreatePrivateMessages (20190131172126)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "private_messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "recipient_id" integer, "sender_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131172126_create_private_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_private_messages_on_recipient_id" ON "private_messages" ("recipient_id")[0m
+  ↳ db/migrate/20190131172126_create_private_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_private_messages_on_sender_id" ON "private_messages" ("sender_id")[0m
+  ↳ db/migrate/20190131172126_create_private_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131172126"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateLikes (20190131172137)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "likes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "gossip_id" integer, "comment_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131172137_create_likes.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  ↳ db/migrate/20190131172137_create_likes.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_gossip_id" ON "likes" ("gossip_id")[0m
+  ↳ db/migrate/20190131172137_create_likes.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_likes_on_comment_id" ON "likes" ("comment_id")[0m
+  ↳ db/migrate/20190131172137_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131172137"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTagGossips (20190131172445)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "tag_gossips" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "gossip_id" integer, "tag_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131172445_create_tag_gossips.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_tag_gossips_on_gossip_id" ON "tag_gossips" ("gossip_id")[0m
+  ↳ db/migrate/20190131172445_create_tag_gossips.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_tag_gossips_on_tag_id" ON "tag_gossips" ("tag_id")[0m
+  ↳ db/migrate/20190131172445_create_tag_gossips.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131172445"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateComments (20190131183651)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "gossip_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131183651_create_comments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/migrate/20190131183651_create_comments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_gossip_id" ON "comments" ("gossip_id")[0m
+  ↳ db/migrate/20190131183651_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131183651"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-31 18:55:50.919302"], ["updated_at", "2019-01-31 18:55:50.919302"]]
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/berenicebourgon/.rvm/gems/ruby-2.5.1/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:4
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:5
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:6
+  [1m[36mPrivateMessage Load (0.6ms)[0m  [1m[34mSELECT "private_messages".* FROM "private_messages"[0m
+  ↳ db/seeds.rb:7
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTagGossip Load (0.6ms)[0m  [1m[34mSELECT "tag_gossips".* FROM "tag_gossips"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (1.0ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Port Fernandoland"], ["zip_code", "59673-6930"], ["created_at", "2019-01-31 18:57:54.061738"], ["updated_at", "2019-01-31 18:57:54.061738"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Valentinabury"], ["zip_code", "83277"], ["created_at", "2019-01-31 18:57:54.067407"], ["updated_at", "2019-01-31 18:57:54.067407"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jenellstad"], ["zip_code", "14346-1490"], ["created_at", "2019-01-31 18:57:54.072210"], ["updated_at", "2019-01-31 18:57:54.072210"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "North Alethiachester"], ["zip_code", "49483"], ["created_at", "2019-01-31 18:57:54.077237"], ["updated_at", "2019-01-31 18:57:54.077237"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Nellefort"], ["zip_code", "56086-4896"], ["created_at", "2019-01-31 18:57:54.082867"], ["updated_at", "2019-01-31 18:57:54.082867"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Shadhaven"], ["zip_code", "76727"], ["created_at", "2019-01-31 18:57:54.089390"], ["updated_at", "2019-01-31 18:57:54.089390"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "West Charaburgh"], ["zip_code", "56024-1973"], ["created_at", "2019-01-31 18:57:54.094479"], ["updated_at", "2019-01-31 18:57:54.094479"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Kymport"], ["zip_code", "04127-0920"], ["created_at", "2019-01-31 18:57:54.100696"], ["updated_at", "2019-01-31 18:57:54.100696"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Port Drusilla"], ["zip_code", "71170"], ["created_at", "2019-01-31 18:57:54.106542"], ["updated_at", "2019-01-31 18:57:54.106542"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "zip_code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "East Andresside"], ["zip_code", "50879-8533"], ["created_at", "2019-01-31 18:57:54.112474"], ["updated_at", "2019-01-31 18:57:54.112474"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Yvonne"], ["last_name", "Tremblay"], ["description", "If he were to punch you in the face you would have to fight off a strong urge to thank him"], ["email", "willa@joneswolf.com"], ["age", 56], ["city_id", 5], ["created_at", "2019-01-31 18:57:54.158696"], ["updated_at", "2019-01-31 18:57:54.158696"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rico"], ["last_name", "Roberts"], ["description", "If he were to punch you in the face you would have to fight off a strong urge to thank him"], ["email", "micah@lockmankshlerin.org"], ["age", 71], ["city_id", 8], ["created_at", "2019-01-31 18:57:54.172983"], ["updated_at", "2019-01-31 18:57:54.172983"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Chaya"], ["last_name", "Koch"], ["description", "In museums, he is allowed to touch the art"], ["email", "billiehowe@mayer.net"], ["age", 32], ["city_id", 10], ["created_at", "2019-01-31 18:57:54.181270"], ["updated_at", "2019-01-31 18:57:54.181270"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Dino"], ["last_name", "Stroman"], ["description", "Cars look both ways for him, before driving down a street"], ["email", "lizsanford@hayes.org"], ["age", 46], ["city_id", 8], ["created_at", "2019-01-31 18:57:54.192361"], ["updated_at", "2019-01-31 18:57:54.192361"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Roderick"], ["last_name", "Lueilwitz"], ["description", "His beard alone has experienced more than a lesser man’s entire body"], ["email", "camila@haag.com"], ["age", 62], ["city_id", 9], ["created_at", "2019-01-31 18:57:54.201474"], ["updated_at", "2019-01-31 18:57:54.201474"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Michel"], ["last_name", "Tromp"], ["description", "Whatever side of the tracks he’s currently on is the right side, even if he crosses the tracks he’ll still be on the right side"], ["email", "joe@stracke.co"], ["age", 51], ["city_id", 1], ["created_at", "2019-01-31 18:57:54.210825"], ["updated_at", "2019-01-31 18:57:54.210825"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Sun"], ["last_name", "Stamm"], ["description", "Respected archaeologists fight over his discarded apple cores"], ["email", "georgekihn@denesik.net"], ["age", 69], ["city_id", 7], ["created_at", "2019-01-31 18:57:54.218969"], ["updated_at", "2019-01-31 18:57:54.218969"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Forest"], ["last_name", "Gottlieb"], ["description", "His pillow is cool on BOTH sides"], ["email", "tora@green.co"], ["age", 19], ["city_id", 9], ["created_at", "2019-01-31 18:57:54.408748"], ["updated_at", "2019-01-31 18:57:54.408748"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Hiedi"], ["last_name", "Swaniawski"], ["description", "His mother has a tattoo that says “Son”"], ["email", "bao@faheyemard.info"], ["age", 55], ["city_id", 10], ["created_at", "2019-01-31 18:57:54.421936"], ["updated_at", "2019-01-31 18:57:54.421936"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Humberto"], ["last_name", "Crooks"], ["description", "His blood smells like cologne"], ["email", "avery@ullrich.info"], ["age", 61], ["city_id", 5], ["created_at", "2019-01-31 18:57:54.432716"], ["updated_at", "2019-01-31 18:57:54.432716"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (1.0ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Heart Delight"], ["content", "He lives vicariously through himself"], ["user_id", 7], ["created_at", "2019-01-31 18:57:54.453506"], ["updated_at", "2019-01-31 18:57:54.453506"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Split Symphony"], ["content", "His tears can cure cancer, too bad he never cries"], ["user_id", 3], ["created_at", "2019-01-31 18:57:54.460856"], ["updated_at", "2019-01-31 18:57:54.460856"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Strong Level"], ["content", "When in Rome, they do as HE does"], ["user_id", 5], ["created_at", "2019-01-31 18:57:54.467174"], ["updated_at", "2019-01-31 18:57:54.467174"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Captain's Cowboy"], ["content", "He has never walked into a spider web"], ["user_id", 5], ["created_at", "2019-01-31 18:57:54.472142"], ["updated_at", "2019-01-31 18:57:54.472142"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Postmodern Cup"], ["content", "When he drives a car off the lot, its price increases in value"], ["user_id", 3], ["created_at", "2019-01-31 18:57:54.476889"], ["updated_at", "2019-01-31 18:57:54.476889"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Kreb-Full-o Breaker"], ["content", "When he was young he once sent his parents to his room"], ["user_id", 7], ["created_at", "2019-01-31 18:57:54.481949"], ["updated_at", "2019-01-31 18:57:54.481949"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Major Star"], ["content", "Once a rattlesnake bit him, after 5 days of excruciating pain, the snake finally died"], ["user_id", 6], ["created_at", "2019-01-31 18:57:54.486877"], ["updated_at", "2019-01-31 18:57:54.486877"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Spilt Level"], ["content", "Cars look both ways for him, before driving down a street"], ["user_id", 3], ["created_at", "2019-01-31 18:57:54.492413"], ["updated_at", "2019-01-31 18:57:54.492413"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Goodbye Bean"], ["content", "His garden maze is responsible for more missing persons than the bermuda triangle"], ["user_id", 2], ["created_at", "2019-01-31 18:57:54.497383"], ["updated_at", "2019-01-31 18:57:54.497383"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Blue Light"], ["content", "When he meets the Pope, the Pope kisses his ring"], ["user_id", 3], ["created_at", "2019-01-31 18:57:54.503149"], ["updated_at", "2019-01-31 18:57:54.503149"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Street Treat"], ["content", "He has never waited 15 minutes after finishing a meal before returning to the pool"], ["user_id", 4], ["created_at", "2019-01-31 18:57:54.508343"], ["updated_at", "2019-01-31 18:57:54.508343"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Goodbye Town"], ["content", "Presidents take his birthday off"], ["user_id", 6], ["created_at", "2019-01-31 18:57:54.513117"], ["updated_at", "2019-01-31 18:57:54.513117"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Split Town"], ["content", "He is fluent in all languages, including three that he only speaks"], ["user_id", 8], ["created_at", "2019-01-31 18:57:54.517636"], ["updated_at", "2019-01-31 18:57:54.517636"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Dark Delight"], ["content", "The star on his Christmas tree is tracked by NASA"], ["user_id", 2], ["created_at", "2019-01-31 18:57:54.523314"], ["updated_at", "2019-01-31 18:57:54.523314"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Summer Choice"], ["content", "He can kill two stones with one bird"], ["user_id", 7], ["created_at", "2019-01-31 18:57:54.533116"], ["updated_at", "2019-01-31 18:57:54.533116"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.7ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Star"], ["content", "Batman watches Saturday morning cartoons about him"], ["user_id", 1], ["created_at", "2019-01-31 18:57:54.543126"], ["updated_at", "2019-01-31 18:57:54.543126"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Seattle Bean"], ["content", "He is considered a national treasure in countries he’s never visited."], ["user_id", 9], ["created_at", "2019-01-31 18:57:54.552484"], ["updated_at", "2019-01-31 18:57:54.552484"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Winter Choice"], ["content", "He once started a fire using only dental floss and water"], ["user_id", 5], ["created_at", "2019-01-31 18:57:54.557285"], ["updated_at", "2019-01-31 18:57:54.557285"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Good-morning Equinox"], ["content", "He once started a fire using only dental floss and water"], ["user_id", 6], ["created_at", "2019-01-31 18:57:54.561666"], ["updated_at", "2019-01-31 18:57:54.561666"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Brooklyn Utopia"], ["content", "His sweat is the cure for the common cold"], ["user_id", 10], ["created_at", "2019-01-31 18:57:54.565892"], ["updated_at", "2019-01-31 18:57:54.565892"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Expelliarmus"], ["created_at", "2019-01-31 18:57:54.580105"], ["updated_at", "2019-01-31 18:57:54.580105"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Obliviate"], ["created_at", "2019-01-31 18:57:54.585019"], ["updated_at", "2019-01-31 18:57:54.585019"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Obliviate"], ["created_at", "2019-01-31 18:57:54.590526"], ["updated_at", "2019-01-31 18:57:54.590526"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Avada Kedavra"], ["created_at", "2019-01-31 18:57:54.593596"], ["updated_at", "2019-01-31 18:57:54.593596"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Alohomora"], ["created_at", "2019-01-31 18:57:54.598099"], ["updated_at", "2019-01-31 18:57:54.598099"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Wingardium Leviosa"], ["created_at", "2019-01-31 18:57:54.601433"], ["updated_at", "2019-01-31 18:57:54.601433"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Reparo"], ["created_at", "2019-01-31 18:57:54.605824"], ["updated_at", "2019-01-31 18:57:54.605824"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Lumos"], ["created_at", "2019-01-31 18:57:54.609466"], ["updated_at", "2019-01-31 18:57:54.609466"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Alohomora"], ["created_at", "2019-01-31 18:57:54.615734"], ["updated_at", "2019-01-31 18:57:54.615734"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTag Create (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Revelio"], ["created_at", "2019-01-31 18:57:54.626518"], ["updated_at", "2019-01-31 18:57:54.626518"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He has taught old dogs a variety of new tricks"], ["recipient_id", 3], ["sender_id", 7], ["created_at", "2019-01-31 18:57:54.650735"], ["updated_at", "2019-01-31 18:57:54.650735"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "The dark is afraid of him"], ["recipient_id", 8], ["sender_id", 4], ["created_at", "2019-01-31 18:57:54.660510"], ["updated_at", "2019-01-31 18:57:54.660510"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (1.0ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He is the life of parties that he has never attended"], ["recipient_id", 4], ["sender_id", 7], ["created_at", "2019-01-31 18:57:54.669362"], ["updated_at", "2019-01-31 18:57:54.669362"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "No less than 25 Mexican folk songs have been written about his beard"], ["recipient_id", 10], ["sender_id", 7], ["created_at", "2019-01-31 18:57:54.678768"], ["updated_at", "2019-01-31 18:57:54.678768"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "When he holds a lady’s purse, he looks manly"], ["recipient_id", 4], ["sender_id", 8], ["created_at", "2019-01-31 18:57:54.685496"], ["updated_at", "2019-01-31 18:57:54.685496"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Werewolves are jealous of his beard"], ["recipient_id", 6], ["sender_id", 10], ["created_at", "2019-01-31 18:57:54.690225"], ["updated_at", "2019-01-31 18:57:54.690225"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He once tried to acquire a cold just to see what it felt like, but it didn’t take"], ["recipient_id", 4], ["sender_id", 9], ["created_at", "2019-01-31 18:57:54.695322"], ["updated_at", "2019-01-31 18:57:54.695322"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "When he meets the Pope, the Pope kisses his ring"], ["recipient_id", 8], ["sender_id", 6], ["created_at", "2019-01-31 18:57:54.701012"], ["updated_at", "2019-01-31 18:57:54.701012"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His beard alone has experienced more than a lesser man’s entire body"], ["recipient_id", 2], ["sender_id", 3], ["created_at", "2019-01-31 18:57:54.706009"], ["updated_at", "2019-01-31 18:57:54.706009"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "The police often question him, just because they find him interesting"], ["recipient_id", 4], ["sender_id", 9], ["created_at", "2019-01-31 18:57:54.710794"], ["updated_at", "2019-01-31 18:57:54.710794"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (3.7ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His organ donation card also lists his beard"], ["recipient_id", 1], ["sender_id", 9], ["created_at", "2019-01-31 18:57:54.717002"], ["updated_at", "2019-01-31 18:57:54.717002"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Panhandlers give him money"], ["recipient_id", 7], ["sender_id", 2], ["created_at", "2019-01-31 18:57:54.728722"], ["updated_at", "2019-01-31 18:57:54.728722"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He once brought a knife to a gunfight… just to even the odds"], ["recipient_id", 10], ["sender_id", 3], ["created_at", "2019-01-31 18:57:54.739752"], ["updated_at", "2019-01-31 18:57:54.739752"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He is fluent in all languages, including three that he only speaks"], ["recipient_id", 2], ["sender_id", 2], ["created_at", "2019-01-31 18:57:54.745779"], ["updated_at", "2019-01-31 18:57:54.745779"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He can kill two stones with one bird"], ["recipient_id", 3], ["sender_id", 5], ["created_at", "2019-01-31 18:57:54.763689"], ["updated_at", "2019-01-31 18:57:54.763689"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Time waits on no one, but him"], ["recipient_id", 3], ["sender_id", 8], ["created_at", "2019-01-31 18:57:54.768531"], ["updated_at", "2019-01-31 18:57:54.768531"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He never says something tastes like chicken.. not even chicken"], ["recipient_id", 9], ["sender_id", 2], ["created_at", "2019-01-31 18:57:54.773337"], ["updated_at", "2019-01-31 18:57:54.773337"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "If opportunity knocks, and he’s not at home, opportunity waits"], ["recipient_id", 7], ["sender_id", 3], ["created_at", "2019-01-31 18:57:54.779696"], ["updated_at", "2019-01-31 18:57:54.779696"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He can speak Russian… in French"], ["recipient_id", 6], ["sender_id", 9], ["created_at", "2019-01-31 18:57:54.786584"], ["updated_at", "2019-01-31 18:57:54.786584"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mPrivateMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "private_messages" ("content", "recipient_id", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Time waits on no one, but him"], ["recipient_id", 7], ["sender_id", 10], ["created_at", "2019-01-31 18:57:54.792282"], ["updated_at", "2019-01-31 18:57:54.792282"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (1.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He has inside jokes with people he’s never met."], ["user_id", 9], ["gossip_id", 6], ["created_at", "2019-01-31 18:57:54.806071"], ["updated_at", "2019-01-31 18:57:54.806071"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His pillow is cool on BOTH sides"], ["user_id", 3], ["gossip_id", 19], ["created_at", "2019-01-31 18:57:54.816333"], ["updated_at", "2019-01-31 18:57:54.816333"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "When he goes to Spain, he chases the bulls"], ["user_id", 5], ["gossip_id", 9], ["created_at", "2019-01-31 18:57:54.827019"], ["updated_at", "2019-01-31 18:57:54.827019"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Once while sailing around the world, he discovered a short cut"], ["user_id", 3], ["gossip_id", 18], ["created_at", "2019-01-31 18:57:54.834124"], ["updated_at", "2019-01-31 18:57:54.834124"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "The Nobel Academy was awarded a prize from HIM"], ["user_id", 3], ["gossip_id", 13], ["created_at", "2019-01-31 18:57:54.841515"], ["updated_at", "2019-01-31 18:57:54.841515"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He once won the world series of poker using UNO cards"], ["user_id", 10], ["gossip_id", 13], ["created_at", "2019-01-31 18:57:54.847634"], ["updated_at", "2019-01-31 18:57:54.847634"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.7ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He doesn’t believe in using oven mitts, nor potholders"], ["user_id", 2], ["gossip_id", 17], ["created_at", "2019-01-31 18:57:54.856008"], ["updated_at", "2019-01-31 18:57:54.856008"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His 5 de Mayo party starts on the 8th of March"], ["user_id", 4], ["gossip_id", 19], ["created_at", "2019-01-31 18:57:54.864349"], ["updated_at", "2019-01-31 18:57:54.864349"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His beard alone has experienced more than a lesser man’s entire body"], ["user_id", 10], ["gossip_id", 18], ["created_at", "2019-01-31 18:57:54.870695"], ["updated_at", "2019-01-31 18:57:54.870695"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Cars look both ways for him, before driving down a street"], ["user_id", 1], ["gossip_id", 11], ["created_at", "2019-01-31 18:57:54.876450"], ["updated_at", "2019-01-31 18:57:54.876450"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His garden maze is responsible for more missing persons than the bermuda triangle"], ["user_id", 1], ["gossip_id", 18], ["created_at", "2019-01-31 18:57:54.882730"], ["updated_at", "2019-01-31 18:57:54.882730"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Freemasons strive to learn HIS secret handshake."], ["user_id", 6], ["gossip_id", 1], ["created_at", "2019-01-31 18:57:54.888181"], ["updated_at", "2019-01-31 18:57:54.888181"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Whatever side of the tracks he’s currently on is the right side, even if he crosses the tracks he’ll still be on the right side"], ["user_id", 10], ["gossip_id", 13], ["created_at", "2019-01-31 18:57:54.893173"], ["updated_at", "2019-01-31 18:57:54.893173"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He once turned a vampire into a vegetarian"], ["user_id", 1], ["gossip_id", 16], ["created_at", "2019-01-31 18:57:54.900291"], ["updated_at", "2019-01-31 18:57:54.900291"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "A bird in his hand is worth three in the bush"], ["user_id", 5], ["gossip_id", 14], ["created_at", "2019-01-31 18:57:54.907711"], ["updated_at", "2019-01-31 18:57:54.907711"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His passport requires no photograph"], ["user_id", 7], ["gossip_id", 4], ["created_at", "2019-01-31 18:57:54.912741"], ["updated_at", "2019-01-31 18:57:54.912741"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "His shadow has been on the ‘best dressed’ list twice"], ["user_id", 8], ["gossip_id", 4], ["created_at", "2019-01-31 18:57:54.918111"], ["updated_at", "2019-01-31 18:57:54.918111"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Freemasons strive to learn HIS secret handshake."], ["user_id", 7], ["gossip_id", 9], ["created_at", "2019-01-31 18:57:54.926111"], ["updated_at", "2019-01-31 18:57:54.926111"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Two countries went to war to dispute HIS nationality"], ["user_id", 10], ["gossip_id", 19], ["created_at", "2019-01-31 18:57:54.933801"], ["updated_at", "2019-01-31 18:57:54.933801"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:33
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "He was on a recent archaeological dig and came across prehistoric foot prints that lead out of Africa into all parts of the world. On close inspection, it turned out that the prints were his"], ["user_id", 3], ["gossip_id", 4], ["created_at", "2019-01-31 18:57:54.940212"], ["updated_at", "2019-01-31 18:57:54.940212"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (1.8ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 6], ["gossip_id", 3], ["created_at", "2019-01-31 18:57:54.952953"], ["updated_at", "2019-01-31 18:57:54.952953"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["gossip_id", 20], ["created_at", "2019-01-31 18:57:54.962423"], ["updated_at", "2019-01-31 18:57:54.962423"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["gossip_id", 2], ["created_at", "2019-01-31 18:57:54.968436"], ["updated_at", "2019-01-31 18:57:54.968436"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["gossip_id", 15], ["created_at", "2019-01-31 18:57:54.973844"], ["updated_at", "2019-01-31 18:57:54.973844"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["gossip_id", 10], ["created_at", "2019-01-31 18:57:54.979612"], ["updated_at", "2019-01-31 18:57:54.979612"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 8], ["gossip_id", 17], ["created_at", "2019-01-31 18:57:54.984643"], ["updated_at", "2019-01-31 18:57:54.984643"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 10], ["gossip_id", 4], ["created_at", "2019-01-31 18:57:54.990306"], ["updated_at", "2019-01-31 18:57:54.990306"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.8ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 10], ["gossip_id", 13], ["created_at", "2019-01-31 18:57:54.997765"], ["updated_at", "2019-01-31 18:57:54.997765"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 9], ["gossip_id", 4], ["created_at", "2019-01-31 18:57:55.004669"], ["updated_at", "2019-01-31 18:57:55.004669"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "gossip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["gossip_id", 18], ["created_at", "2019-01-31 18:57:55.010633"], ["updated_at", "2019-01-31 18:57:55.010633"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["comment_id", 10], ["created_at", "2019-01-31 18:57:55.018857"], ["updated_at", "2019-01-31 18:57:55.018857"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 7], ["comment_id", 15], ["created_at", "2019-01-31 18:57:55.031639"], ["updated_at", "2019-01-31 18:57:55.031639"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 9], ["comment_id", 1], ["created_at", "2019-01-31 18:57:55.039351"], ["updated_at", "2019-01-31 18:57:55.039351"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["comment_id", 14], ["created_at", "2019-01-31 18:57:55.045572"], ["updated_at", "2019-01-31 18:57:55.045572"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["comment_id", 18], ["created_at", "2019-01-31 18:57:55.050687"], ["updated_at", "2019-01-31 18:57:55.050687"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 9], ["comment_id", 12], ["created_at", "2019-01-31 18:57:55.055860"], ["updated_at", "2019-01-31 18:57:55.055860"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 4], ["comment_id", 15], ["created_at", "2019-01-31 18:57:55.061195"], ["updated_at", "2019-01-31 18:57:55.061195"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["comment_id", 10], ["created_at", "2019-01-31 18:57:55.066546"], ["updated_at", "2019-01-31 18:57:55.066546"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 2], ["comment_id", 9], ["created_at", "2019-01-31 18:57:55.072450"], ["updated_at", "2019-01-31 18:57:55.072450"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:41
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mLike Create (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("user_id", "comment_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["comment_id", 18], ["created_at", "2019-01-31 18:57:55.077699"], ["updated_at", "2019-01-31 18:57:55.077699"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (1.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 17], ["tag_id", 6], ["created_at", "2019-01-31 18:57:55.091072"], ["updated_at", "2019-01-31 18:57:55.091072"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 10], ["tag_id", 5], ["created_at", "2019-01-31 18:57:55.098807"], ["updated_at", "2019-01-31 18:57:55.098807"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 20], ["tag_id", 2], ["created_at", "2019-01-31 18:57:55.104726"], ["updated_at", "2019-01-31 18:57:55.104726"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.8ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 12], ["tag_id", 3], ["created_at", "2019-01-31 18:57:55.109931"], ["updated_at", "2019-01-31 18:57:55.109931"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 15], ["tag_id", 3], ["created_at", "2019-01-31 18:57:55.115691"], ["updated_at", "2019-01-31 18:57:55.115691"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 20], ["tag_id", 10], ["created_at", "2019-01-31 18:57:55.121481"], ["updated_at", "2019-01-31 18:57:55.121481"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.6ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 17], ["tag_id", 7], ["created_at", "2019-01-31 18:57:55.130779"], ["updated_at", "2019-01-31 18:57:55.130779"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 16], ["tag_id", 2], ["created_at", "2019-01-31 18:57:55.142072"], ["updated_at", "2019-01-31 18:57:55.142072"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 5], ["tag_id", 9], ["created_at", "2019-01-31 18:57:55.147702"], ["updated_at", "2019-01-31 18:57:55.147702"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 15], ["tag_id", 10], ["created_at", "2019-01-31 18:57:55.153655"], ["updated_at", "2019-01-31 18:57:55.153655"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 8], ["tag_id", 5], ["created_at", "2019-01-31 18:57:55.158589"], ["updated_at", "2019-01-31 18:57:55.158589"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 17], ["tag_id", 10], ["created_at", "2019-01-31 18:57:55.163251"], ["updated_at", "2019-01-31 18:57:55.163251"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.5ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 20], ["tag_id", 6], ["created_at", "2019-01-31 18:57:55.167884"], ["updated_at", "2019-01-31 18:57:55.167884"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 10], ["tag_id", 8], ["created_at", "2019-01-31 18:57:55.173249"], ["updated_at", "2019-01-31 18:57:55.173249"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 18], ["tag_id", 8], ["created_at", "2019-01-31 18:57:55.177856"], ["updated_at", "2019-01-31 18:57:55.177856"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 1], ["tag_id", 8], ["created_at", "2019-01-31 18:57:55.183027"], ["updated_at", "2019-01-31 18:57:55.183027"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 14], ["tag_id", 4], ["created_at", "2019-01-31 18:57:55.187758"], ["updated_at", "2019-01-31 18:57:55.187758"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.7ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 11], ["tag_id", 10], ["created_at", "2019-01-31 18:57:55.193462"], ["updated_at", "2019-01-31 18:57:55.193462"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.2ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 1], ["tag_id", 4], ["created_at", "2019-01-31 18:57:55.199113"], ["updated_at", "2019-01-31 18:57:55.199113"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (0.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mTagGossip Create (0.4ms)[0m  [1m[32mINSERT INTO "tag_gossips" ("gossip_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["gossip_id", 11], ["tag_id", 9], ["created_at", "2019-01-31 18:57:55.203442"], ["updated_at", "2019-01-31 18:57:55.203442"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGossip Load (1.0ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
